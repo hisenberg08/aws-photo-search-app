@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="index.css">
+</head>
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="index.js"></script>
+<script  src="gateway/lib/CryptoJS/rollups/sha256.js"></script>
+<script type="text/javascript" src="gateway/lib/axios/dist/axios.standalone.js"></script>
+<script src="gateway/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+<script type="text/javascript" src="gateway/lib/CryptoJS/components/hmac.js"></script>
+<script type="text/javascript" src="gateway/lib/CryptoJS/components/enc-base64.js"></script>
+<script type="text/javascript" src="gateway/lib/url-template/url-template.js"></script>
+<script type="text/javascript" src="gateway/lib/apiGatewayCore/sigV4Client.js"></script>
+<script type="text/javascript" src="gateway/lib/apiGatewayCore/apiGatewayClient.js"></script>
+<script type="text/javascript" src="gateway/lib/apiGatewayCore/simpleHttpClient.js"></script>
+<script type="text/javascript" src="gateway/lib/apiGatewayCore/utils.js"></script>
+<script type="text/javascript" src="gateway/apigClient.js"></script>
+
+<div class="file-upload">
+  <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+
+  <div class="image-upload-wrap">
+    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+    <div class="drag-text">
+      <h3>Drag and drop a file or select add Image</h3>
+    </div>
+  </div>
+  <div class="file-upload-content">
+    <img class="file-upload-image" src="#" alt="your image" />
+    <div class="image-title-wrap">
+      <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+      <button type="button" onclick="imageUpload()" class="upload-image">Upload Now</button>
+    </div>
+  </div>
+</div>
+<div><input type="text" name="search" placeholder="Search.." id="searchbar" onkeypress="search(event)"></div>
+<div class = "photo-divs" id = "photo-divs">
+</div>
+</html>
